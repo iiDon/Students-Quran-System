@@ -5,7 +5,7 @@ import { GET_ALL_STUDENTS, GET_ALL_HALQAT } from "../GraphQL/queries";
 import Select from "react-select";
 const Stickers = () => {
   const [students, setStudents] = useState();
-  const { data, loading, error } = useQuery(GET_ALL_STUDENTS);
+  const { data } = useQuery(GET_ALL_STUDENTS);
   const { data: dataH } = useQuery(GET_ALL_HALQAT);
 
   useEffect(() => {
@@ -22,13 +22,6 @@ const Stickers = () => {
       };
     });
 
-const filterStudents = () => {
-    students.map((student) => {
-        if (student.id != 185) {
-            console.log("dd")
-        }
-    })
-}
 
 
   return (
@@ -38,7 +31,7 @@ const filterStudents = () => {
           <h3 className="m-4 texl-lg">فرز حسب: </h3>
           <div className="md:flex pl-8 ">
             <h3 className="m-auto ml-4 text-lg mr-4">الحلقة:</h3>
-            <Select className="w-full m-auto mr-4" options={halqaOptions} onSelected={() => filterStudents}  />
+            <Select className="w-full m-auto mr-4" options={halqaOptions}  />
           </div>
         </div>
         <div className="border  grid md:grid-cols-3 grid-cols-1">

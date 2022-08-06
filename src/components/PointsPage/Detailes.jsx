@@ -5,7 +5,7 @@ import { GET_STUDENTS_POINTS } from "../../GraphQL/queries";
 
 const Detailes = ({ studentDetails }) => {
   // Queries And Mutatuins
-  const { data, loading, error } = useQuery(GET_STUDENTS_POINTS);
+  const { data } = useQuery(GET_STUDENTS_POINTS);
   const [AllStudents, setAllStudents] = useState();
 
   useEffect(() => {
@@ -77,7 +77,7 @@ const Detailes = ({ studentDetails }) => {
           <tbody className="">
             {AllStudents &&
               AllStudents.map((student, index) =>
-                studentDetails == student.id ? (
+                studentDetails === student.id ? (
                   <>
                     {student.attributes.SavingPoints.data.map((value, index) => (
                       <tr className="border p-3 text-center" key={student.id}>

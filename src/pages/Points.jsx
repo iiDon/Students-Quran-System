@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import Rows from "../components/PointsPage/Rows";
-import Barcode from "react-barcode";
 import Detailes from "../components/PointsPage/Detailes";
 
 const Points = () => {

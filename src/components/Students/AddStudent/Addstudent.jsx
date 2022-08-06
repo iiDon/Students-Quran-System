@@ -9,7 +9,6 @@ import {
   GET_ALL_STAGES,
 } from "../../../GraphQL/queries";
 import Label from "./Label";
-import { useEffect } from "react";
 
 //add student
 const Addstudent = ({ setIsAdd }) => {
